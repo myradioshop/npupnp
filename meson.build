@@ -18,8 +18,6 @@ elif host_machine.system() == 'sunos'
 endif
 
 deps += dependency('threads')
-deps += dependency('libcurl')
-deps += dependency('libmicrohttpd')
 expat_dep = dependency('expat', required: get_option('expat'))
 deps += expat_dep
 
