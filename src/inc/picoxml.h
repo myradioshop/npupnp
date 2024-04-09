@@ -425,14 +425,14 @@ private:
         std::string out;
         out.reserve(s.size());
         std::string::const_iterator it = s.begin();
-        auto epos = 0;
+        // auto epos = 0;
         while (it != s.end()) {
             if (*it != '&') {
                 out += *it++;
                 continue;
             }
             // Position: m_pos minus the string size (including 2 quotes) plus position inside s
-            epos = m_pos - (s.size() + 2) + it - s.begin();
+            // epos = m_pos - (s.size() + 2) + it - s.begin();
             ++it;
             std::string code;
             while (it != s.end() && *it != ';') {
@@ -440,7 +440,7 @@ private:
             }
             if (it == s.end()) {
                 // Unexpected
-                m_reason << "End of quoted string, inside entity name at cpos " << epos;
+                //m_reason << "End of quoted string, inside entity name at cpos " << epos;
                 m_unquoteError = true;
                 out.clear();
                 break;
